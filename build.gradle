@@ -1,0 +1,30 @@
+buildscript {
+    ext {
+        vSdkMin = 15
+        vSdkTarget = 24
+        vBuildTools = '25.0.0'
+        vGradlePlugin = '2.2.2'
+        vKotlin = '1.0.4'
+        vSupport = '25.0.0'
+    }
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$vGradlePlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$vKotlin"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
